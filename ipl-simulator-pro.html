@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Auction Simulator</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0f0f0; color: #333; }
+        h1, h2, h3 { text-align: center; }
+        table { margin: auto; width: 80%; border-collapse: collapse; }
+        th, td { border: 1px solid #ccc; padding: 10px; text-align: center; }
+        th { background: #007bff; color: white; }
+        .emoji { font-size: 1.5em; }
+    </style>
+</head>
+<body>
+    <h1>IPL Auction Simulator</h1>
+    <h2>Available Players</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Rating</th>
+                <th>Specialization</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Example Players -->
+            <tr>
+                <td>Virat Kohli <span class="emoji">🏏</span></td>
+                <td>Batsman</td>
+                <td>150</td>
+                <td>Finisher</td>
+            </tr>
+            <tr>
+                <td>Jasprit Bumrah <span class="emoji">🏐</span></td>
+                <td>Bowler</td>
+                <td>140</td>
+                <td>Death Bowler</td>
+            </tr>
+            <tr>
+                <td>MS Dhoni <span class="emoji">🧤</span></td>
+                <td>Wicket-Keeper</td>
+                <td>148</td>
+                <td>Finisher</td>
+            </tr>
+            <tr>
+                <td>Hardik Pandya <span class="emoji">🎯</span></td>
+                <td>All-Rounder</td>
+                <td>145</td>
+                <td>Finisher</td>
+            </tr>
+            <!-- More Players to be Added -->
+        </tbody>
+    </table>
+    <script>
+        // Sample data for 200+ players can be added here dynamically
+        // function to initialize players
+        function loadPlayers() {
+            const players = [
+                { name: 'Virat Kohli', role: 'Batsman', rating: 150, specialization: 'Finisher', emoji: '🏏' },
+                { name: 'Jasprit Bumrah', role: 'Bowler', rating: 140, specialization: 'Death Bowler', emoji: '🏐' },
+                { name: 'MS Dhoni', role: 'Wicket-Keeper', rating: 148, specialization: 'Finisher', emoji: '🧤' },
+                { name: 'Hardik Pandya', role: 'All-Rounder', rating: 145, specialization: 'Finisher', emoji: '🎯' }
+            ];
+            const tableBody = document.querySelector('tbody');
+            players.forEach(player => {
+                const row = document.createElement('tr');
+                row.innerHTML = `<td>${player.name} <span class='emoji'>${player.emoji}</span></td><td>${player.role}</td><td>${player.rating}</td><td>${player.specialization}</td>`;
+                tableBody.appendChild(row);
+            });
+        }
+        loadPlayers();
+    </script>
+</body>
+</html>
