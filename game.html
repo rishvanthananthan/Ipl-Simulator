@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Auction Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        #statistic {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px 0;
+        }
+        .player {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            #statistic {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>IPL Auction Game</h1>
+    </header>
+    <div class="container">
+        <div id="statistic">
+            <div id="team-stats">Team Stats: ???</div>
+            <div id="budget-info">Remaining Budget: ???</div>
+        </div>
+        <div id="players">
+            <!-- Player listing will be dynamically generated here -->
+        </div>
+    </div>
+    <script>
+        // Game Variables
+        const players = 150; // Total players
+        const auctionData = [];
+        const budget = 100; // Example budget
+        let teams = [];
+
+        // Function to create players with emojis
+        function createPlayers() {
+            for (let i = 1; i <= players; i++) {
+                const player = {
+                    name: `Player ${i}`,
+                    emoji: '🏏', // Example emoji
+                    value: Math.random() * budget,
+                    bidAmount: 0,
+                    roleNecessity: Math.random(),
+                    playerQuality: Math.random(),
+                    budgetEfficiency: Math.random(),
+                    priceSensitivity: Math.random(),
+                    strategicBehavior: Math.random(),
+                    randomUnpredictability: Math.random()
+                };
+                auctionData.push(player);
+            }
+        }
+
+        // Function for AI bidding logic
+        function aiBid(player) {
+            // Implement AI bidding logic based on the six factors here
+        }
+
+        // Function to display players
+        function displayPlayers() {
+            const playersDiv = document.getElementById('players');
+            playersDiv.innerHTML = '';
+            auctionData.forEach(player => {
+                const playerDiv = document.createElement('div');
+                playerDiv.className = 'player';
+                playerDiv.innerHTML = `${player.emoji} ${player.name} - Value: ${player.value.toFixed(2)} Cr`;
+                playersDiv.appendChild(playerDiv);
+            });
+        }
+
+        // Initialize Game
+        createPlayers();
+        displayPlayers();
+    </script>
+</body>
+</html>
